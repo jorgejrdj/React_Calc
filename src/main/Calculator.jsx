@@ -41,12 +41,18 @@ export default class Calculator extends Component{
         /* processa o valor, e devolve o valor pronto para a proxima operação */
         else
         {
+            /*finalização da operação. Melhorar a flag depois*/
             const equals = operation === '='
+
+            /*Operação corrente */
             const currentOperation = this.state.operation
+            
+            /*clone de values */
             const values = [...this.state.values]
             
             try
             {
+                /* vals para calculo. melhorar. Result no vetor 0 */
                 values [0] = eval(`${values[0]} ${currentOperation} ${values[1]}`)
             }
             
@@ -57,7 +63,7 @@ export default class Calculator extends Component{
 
             values[1] = 0
 
-            this.setState.State
+            this.setState
             ({
                 displayValue: value [0],
                 operation: equals ? null: operation,
